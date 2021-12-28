@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    consul:
+      discovery:
+        preferIpAddress: true
+        instanceId: ${spring.application.name}:${random.value}
+      config:
+        name: persistenceService
+      host: localhost
+      port: 32598

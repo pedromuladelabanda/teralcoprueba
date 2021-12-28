@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="api-gateway" />
+        <module name="common-entities" />
+        <module name="common-interfaces" />
+        <module name="persistence-service" />
+        <module name="rest-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.8">
+      <module name="api-gateway" target="1.8" />
+      <module name="common-entities" target="8" />
+      <module name="common-interfaces" target="8" />
+      <module name="library-pom" target="8" />
+      <module name="libs-pom" target="8" />
+      <module name="micro-pom" target="1.8" />
+      <module name="microservice-pom" target="1.8" />
+      <module name="persistence-service" target="1.8" />
+      <module name="prueba" target="1.5" />
+      <module name="rest-service" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,8 @@
+server:
+  port: 8021
+spring:
+  application:
+    name: restService
+
+zuul:
+  sensitiveHeaders: Cookie,Set-Cookie

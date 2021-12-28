@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Kotlin2JsCompilerArguments">
+    <option name="sourceMapEmbedSources" />
+    <option name="sourceMapPrefix" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/folder-poms/pom.xml" />
+        <option value="$PROJECT_DIR$/common-entities/pom.xml" />
+        <option value="$PROJECT_DIR$/parent-poms/micro-pom/pom.xml" />
+        <option value="$PROJECT_DIR$/parent-poms/libs-pom/pom.xml" />
+        <option value="$PROJECT_DIR$/persistence-service/pom.xml" />
+        <option value="$PROJECT_DIR$/api-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/rest-service/pom.xml" />
+        <option value="$PROJECT_DIR$/common-interfaces/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>
