@@ -1,0 +1,17 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: rest-service
+  labels:
+    name: rest-service
+    namespace: {{.Release.Namespace}}
+    cleanup: "{{.Release.Namespace}}-{{.Chart.Name}}-services"
+spec:
+  ports:
+  - protocol: TCP
+    port: 8020
+    targetPort: 8020
+  selector:
+    name: rest-service
+  type: ClusterIP
+  sessionAffinity: None

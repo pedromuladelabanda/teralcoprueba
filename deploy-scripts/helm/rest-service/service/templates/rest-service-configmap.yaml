@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rest-service-configmap
+data:
+  CONSUL_HOST: {{.Values.consul.server}}
+  CONSUL_PORT: !!integer {{.Values.consul.port}}
+  KEYCLOAK_REALM: {{.Values.keycloak.realm}}
+  KEYCLOAK_AUTH_URL: {{.Values.keycloak.url}}
+  KEYCLOAK_SSL: {{.Values.keycloak.ssl}}
+  KEYCLOAK_CLIENT_ID: {{.Values.keycloak.client}}
+  KEYCLOAK_SECRET: {{.Values.keycloak.secret}}
+  KEYCLOAK_USE_ROLE_MAPPINGS: !!boolean {{.Values.keycloak.use_role_mapping}}
+  KEYCLOAK_BEARER_ONLY: !!boolean {{.Values.keycloak.bearer_only}} 
+  KEYCLOAK_PUBLIC_KEY: {{.Values.keycloakValues.publicKey}}
+  DATASOURCE_URL: {{.Values.database.url}}
+  DATASOURCE_USERNAME: {{.Values.database.username}}
+  DATASOURCE_PASSWORD: {{.Values.database.password}}
+
+        

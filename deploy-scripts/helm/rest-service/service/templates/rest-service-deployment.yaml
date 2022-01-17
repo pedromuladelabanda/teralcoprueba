@@ -1,0 +1,43 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: rest-service
+  labels:
+    name: rest-service
+    cleanup: "{{.Release.Namespace}}-{{.Chart.Name}}-services"
+spec:
+  replicas: {{.Values.replicas}}
+  selector:
+    matchLabels:
+      name: rest-service
+      cleanup: "{{.Release.Namespace}}-{{.Chart.Name}}-services"
+  template:
+    metadata:
+      labels:
+        name: rest-service
+        cleanup: "{{.Release.Namespace}}-{{.Chart.Name}}-services"
+    spec:
+      containers:
+      - name: rest-service
+        image: {{.Values.repo}}/prueba-rest-service:{{.Chart.AppVersion}}
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8020
+          protocol: TCP
+        livenessProbe:
+          tcpSocket:
+            port: 8020
+          initialDelaySeconds: 300
+          periodSeconds: 200
+        envFrom:
+        - configMapRef:
+            name: rest-service-configmap
+      restartPolicy: Always
+      dnsPolicy: ClusterFirst
+
+
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1

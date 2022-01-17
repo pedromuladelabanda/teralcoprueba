@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rest-service-consul-configmap
+  labels:
+    name: rest-service-consul-configmap
+    cleanup: "{{.Release.Namespace}}-{{.Chart.Name}}-services"
+data:
+  rest-service.properties: |-
+{{ .Files.Get "files/rest-service.properties" | indent 4 }}

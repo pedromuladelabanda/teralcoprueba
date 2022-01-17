@@ -1,0 +1,4 @@
+# Environment Variables
+consul:
+  server: localhost
+  port: 32598

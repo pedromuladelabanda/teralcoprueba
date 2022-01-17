@@ -1,0 +1,47 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: api-gateway
+  labels:
+    name: api-gateway
+    cleanup: "{{.Release.Namespace}}-{{.Chart.Name}}-services"
+spec:
+  replicas: {{.Values.replicas}}
+  selector:
+    matchLabels:
+      name: api-gateway
+      cleanup: "{{.Release.Namespace}}-{{.Chart.Name}}-services"
+  template:
+    metadata:
+      labels:
+        name: api-gateway
+        cleanup: "{{.Release.Namespace}}-{{.Chart.Name}}-services"
+    spec:
+      containers:
+      - name: api-gateway
+        image: {{.Values.repo}}/prueba-det-api-gateway:{{.Chart.AppVersion}}
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8010
+          protocol: TCP
+        readinessProbe:
+          tcpSocket:
+            port: 8010
+          initialDelaySeconds: 200
+          periodSeconds: 100
+        livenessProbe:
+          tcpSocket:
+            port: 8010
+          initialDelaySeconds: 150
+          periodSeconds: 200
+        envFrom:
+        - configMapRef:
+            name: api-gateway-configmap      
+      restartPolicy: Always
+      dnsPolicy: ClusterFirst
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1

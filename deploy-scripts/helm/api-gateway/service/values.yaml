@@ -1,0 +1,32 @@
+# Default values for reportnet.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# Specific Values for Api Gateway
+
+# Environment Variables
+consul:
+  server: localhost
+  port: 32598
+
+# Connection to Database parameters
+database:
+  url: jdbc:postgresql://localhost:30930/postgres
+  username: postgres
+  password: postgres
+    
+replicas: 1
+repo: localhost:5000
+# Other Variables
+
+keycloak:
+  realm: prueba-tecnica
+  url: https://desarrollo.teralco.com/auth/
+  ssl: external
+  client: security-admin-console
+  secret: e1b9169b-2c97-465d-b7a4-a75c1cfc4da7
+  use_role_mapping: true
+  bearer_only: true
+
+keycloakValues:
+  publicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAk7+FOzkDZEbm2YKWM1TxvmrAQmxpQdfUqjWcq9VaoaTcpTrD7EXAO3utPaH6JlwhFhUK0Tj6ESwSpQ68zyquQlMoH1KfxL4mMDf3A2WhSDOFycNLbvV7q6pc2XJdwBwS9QtfhCcqgErtMKL1SQE+s2dZVNRuUr11LXZ7dunc7KFkpvuHreaJ7nFkFjxnr1WJ9VGmitXeizTznjCENln24rdNBhDEGDcPA/fOogGVZWp/3H79BG4VeIn3y3mnSm4E/5hQ5Ao2esxrz3itaiRo3Q3eFS+aobi6ikfA/7AWHF6+KkyDDZREFUONneHjmvXGTXFKjC/OKmc359cvmdR/DQIDAQAB
