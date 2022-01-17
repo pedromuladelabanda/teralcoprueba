@@ -28,7 +28,7 @@ public class CreateConsulKV {
             + getKV("deploy-scripts/helm/api-gateway/preconfig/files/api-gateway.properties")
             + getKV("deploy-scripts/helm/fa-service/preconfig/files/fa.properties")
             + getKV(
-                "deploy-scripts/helm/message-handler/preconfig/files/message-handler.properties")
+                "deploy-scripts/helm/rest-service/preconfig/files/rest-service.properties")
             + getKV(
                 "deploy-scripts/helm/validation-service/preconfig/files/validation-service.properties")
             + getKV(

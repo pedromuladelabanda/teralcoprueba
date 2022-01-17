@@ -17,7 +17,7 @@ public interface CochesController {
     /**
      * Zuul controller
      */
-    @FeignClient(value = "persistenceService", contextId = "requestCoches", path = "/request/coches")
+    @FeignClient(value = "coches", contextId = "coches", path = "/coches")
     interface CochesControllerZuul extends CochesController { }
 
 }

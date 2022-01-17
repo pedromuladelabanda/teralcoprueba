@@ -6,5 +6,5 @@ spring:
         instanceId: ${spring.application.name}:${random.value}
       config:
         name: apiGateway
-      host: localhost
-      port: 32598
+      host: ${CONSUL_HOST:localhost}
+      port: ${CONSUL_PORT:32598}
